@@ -1,15 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
-
 $color_1: rgba(255, 255, 255, 0.5);
 $white: #ffffff;
 $color_3: transparent;
-$font-family_1: "Work Sans", sans-serif;
-$font-family_2: "Lora", serif;
 $background-color_1: #050505;
-$background-color_2: #ffffff;
 $background-color_3: inherit;
 $background-color_4: rgba(255, 255, 255, 0);
-$background-color_5: white;
 
 
 .s-header {
@@ -21,12 +15,14 @@ $background-color_5: white;
 	text-align: center;
 	z-index: 100;
 }
+
 .s-header.sticky {
 	background-color: $background-color_1;
 	position: fixed;
 	top: 0;
 	left: 0;
 }
+
 .header-logo {
 	display: inline-block;
 	padding: 0;
@@ -35,6 +31,7 @@ $background-color_5: white;
 	position: absolute;
 	top: 50%;
 	left: 40px;
+
 	a {
 		display: block;
 		margin: 0;
@@ -43,31 +40,36 @@ $background-color_5: white;
 		border: none;
 		transition: all .3s;
 	}
+
 	span {
 		font-family: "Goldman", sans-serif;
-        font-size: 3rem;
-        color: $white;
+		font-size: 3rem;
+		color: $white;
 	}
 }
+
 .header-nav-wrap {
 	display: inline-block;
+
 	ul {
 		display: inline-block;
 		list-style: none;
 		margin-left: 0;
 		margin-top: 18px;
 	}
+
 	li {
 		display: inline-block;
 		padding-left: 0;
+
 		a {
 			display: block;
 			line-height: calc(78px - (18px * 2));
 		}
 	}
 }
+
 .header-main-nav {
-	font-family: $font-family_1;
 	font-size: 13px;
 	text-transform: uppercase;
 	letter-spacing: .3rem;
@@ -75,50 +77,79 @@ $background-color_5: white;
 	margin: 0 0 0 4px;
 	z-index: 2;
 	position: static;
+
 	li {
 		margin: 0 2rem;
 	}
+
 	a {
 		color: $color_1;
 		position: relative;
+
 		&:hover {
 			color: $white;
 		}
+
 		&:focus {
 			color: $white;
 		}
+
 		&:active {
 			color: $white;
 		}
 	}
+
 	.current {
 		a {
 			color: $white;
 		}
 	}
 }
+
 .header-social {
 	font-size: 2rem;
 	margin: 0;
 	position: absolute;
 	top: 0;
 	right: 40px;
+
 	li {
 		margin-right: 1rem;
+
 		&:last-child {
 			margin-right: 0;
 		}
+
 		a {
 			color: $white;
 		}
 	}
 }
+
+.header-nav-wrap {
+	display: none;
+
+	&.open {
+		display: block;
+	}
+
+	&.mobile {
+		// Add mobile-specific styles if needed
+	}
+}
+
+.header-menu-toggle {
+	&.is-clicked {
+		// Style when clicked
+	}
+}
+
+
 .header-menu-toggle {
 	display: none;
 	height: 42px;
 	width: 42px;
 	line-height: 42px;
-	font-family: $font-family_2;
 	font-size: 1.4rem;
 	text-transform: uppercase;
 	letter-spacing: .2rem;
@@ -127,18 +158,21 @@ $background-color_5: white;
 	position: absolute;
 	right: 32px;
 	top: 18px;
+
 	&:hover {
 		color: $white;
 	}
+
 	&:focus {
 		color: $white;
 	}
+
 	span {
 		display: block;
 		width: 24px;
 		height: 2px;
 		margin-top: -1px;
-		background-color: $background-color_2;
+		background-color: $white;
 		transition: all .5s;
 		font: 0/0 a;
 		text-shadow: none;
@@ -148,6 +182,7 @@ $background-color_5: white;
 		left: 9px;
 		right: auto;
 		bottom: auto;
+
 		&::before {
 			content: '';
 			width: 100%;
@@ -158,6 +193,7 @@ $background-color_5: white;
 			transition: all .5s;
 			top: -9px;
 		}
+
 		&::after {
 			content: '';
 			width: 100%;
@@ -170,55 +206,66 @@ $background-color_5: white;
 		}
 	}
 }
+
 .header-menu-toggle.is-clicked {
 	span {
 		background-color: $background-color_4;
 		transition: all .1s;
+
 		&::before {
-			background-color: $background-color_5;
+			background-color: $white;
 			top: 0;
 			-webkit-transform: rotate(135deg);
 			transform: rotate(135deg);
 		}
+
 		&::after {
-			background-color: $background-color_5;
+			background-color: $white;
 			bottom: 0;
 			-webkit-transform: rotate(225deg);
 			transform: rotate(225deg);
 		}
 	}
 }
+
 @media screen and (max-width:1200px) {
 	.header-main-nav {
 		font-size: 12px;
+
 		li {
 			margin: 0 1.4rem;
 		}
 	}
 }
+
 @media screen and (max-width:1000px) {
 	.s-header {
 		text-align: right;
 	}
+
 	.header-nav-wrap {
 		margin-right: 36px;
+
 		.header-social {
 			display: none;
 		}
 	}
 }
+
 @media screen and (max-width:800px) {
 	.s-header {
 		background-color: $background-color_1;
 		position: fixed;
 		top: 0;
 	}
+
 	.header-logo {
 		img {
 			width: 128px;
 			height: 30px;
 		}
 	}
+
 	.header-nav-wrap {
 		display: none;
 		text-align: left;
@@ -226,44 +273,53 @@ $background-color_5: white;
 		width: 100%;
 		background-color: $background-color_1;
 		padding: 120px 44px 64px;
+
 		.header-main-nav {
 			display: block;
 			padding-left: 0;
 			height: auto;
 			margin: 0 0 4rem 0;
 			border-top: 1px solid rgba(255, 255, 255, 0.05);
+
 			li {
 				display: block;
 				margin: 0;
 				padding: 0;
 				border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
 				a {
 					padding: 18px 0;
 					line-height: 20px;
 				}
 			}
 		}
+
 		.header-social {
 			display: block;
 			position: static;
+
 			li {
 				font-size: 1.8rem;
 				margin-right: 1.6rem;
+
 				a {
 					line-height: 36px;
 				}
 			}
 		}
 	}
+
 	.header-menu-toggle {
 		display: block;
 	}
 }
+
 @media screen and (max-width:600px) {
 	.header-logo {
 		left: 35px;
 	}
 }
+
 @media only screen and (min-width:801px) {
 	.header-nav-wrap {
 		display: block !important;
