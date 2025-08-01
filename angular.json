@@ -26,9 +26,11 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "assets/"
               }
             ],
             "styles": [
@@ -37,6 +39,11 @@
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
+            "stylePreprocessorOptions": {
+                "includePaths": [
+                  "node_modules"
+                ]
+              },
             "ssr": {
               "entry": "server.ts"
             }
@@ -90,9 +97,11 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "assets/"
               }
             ],
             "styles": [
